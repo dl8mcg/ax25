@@ -76,10 +76,10 @@ void AX25GetNextCharacter()
 		return;
 	}	
 	bytecnt--;
-	AX25byte = AX25Buf[character++];				// get CW-pattern of next text-character
+	AX25byte = AX25Buf[character++];				// get next character
 	
 	
-	if(!(AX25byte & 0x80))					// MSB first; if zero, toggle frequency
+	if(!(AX25byte & 0x80))							// MSB first; if zero, toggle frequency
 		CallSmFreq();
 	
 	AX25byte <<= 1;
